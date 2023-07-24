@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>컴포넌트 가이드</title>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- 메뉴 기능 위한 스크립트 -->
+  <script src="./dist/assets/js/jquery.js"></script>
+  <script src="./dist/assets/js/common.js"></script>
+
+  <!-- favicon -->
+  <link rel="icon" href="./dist/assets/images/common/favicon.ico" type="image/x-icon" />
+  <!-- //favicon -->
+
+  <!-- style -->
+  <link type="text/css" rel="stylesheet" href="./dist/assets/css/ui-style.css" />
+  <link type="text/css" rel="stylesheet" href="./dist/assets/css/common.css" />
+  <link type="text/css" rel="stylesheet" href="./dist/assets/css/main.css" />
+  <link type="text/css" rel="stylesheet" href="./dist/assets/css/sub.css" />
+  <!-- //style -->
+
+
+  <style>
+    b {
+      margin-left: 10px;
+    }
+
+    h1.test-title {
+      font-size: 30px;
+      margin: 50px 50px;
+    }
+
+    h2.test-title {
+      display: block;
+      width: 100%;
+      margin: 0 0 20px;
+      font-size: 22px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #888;
+    }
+
+    h3.test-title {
+      margin: 0 0 20px;
+      font-size: 18px;
+    }
+
+    .test-section {
+      border-top: 2px solid #ddd;
+      padding: 50px;
+    }
+
+    .test-section-sub+.test-section-sub {
+      margin-top: 20px;
+      border-top: 1px dashed #ddd;
+      padding-top: 20px;
+    }
+
+    .test-code {
+      border: 2px solid #ddd;
+      margin: 10px 0;
+      background: #101737;
+      padding: 10px;
+    }
+
+    .test-code:before {
+      content: 'ex.';
+      display: block;
+      font-size: 12px;
+    }
+
+    .test-description {
+      margin: 10px 0;
+      padding: 0 12px;
+    }
+
+    .test-links {
+      margin-left: -20px;
+    }
+
+    .test-links:after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+
+    .test-links a {
+      display: block;
+      margin: 20px 0 0 20px;
+      float: left;
+      padding: 5px 15px;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      background: #333;
+    }
+
+    .test-links+h2.test-title {
+      margin-top: 20px;
+    }
+  </style>
+  <!-- //style -->
+</head>
+
+<body>
+  <div id="wrap">
+    <div style="display: table"></div>
+
+    <h1 class="test-title">Component</h1>
+
+    <!-- <div class="test-section test-section--margin">
+      <style>
+        .test-section--margin{
+          font-size: 1.6rem;
+        }
+      </style>
+      <h2 class="test-title">Button</h2>
+      <div>margin-top : 10px; 은 class mt-10</div>
+    </div> -->
+
+
+
+
+    <div class="test-section test-section--button">
+      <style>
+        .test-section--button .ui-button {
+          margin: 2px;
+        }
+      </style>
+      <style>
+        .button-caution {
+          position: unset;
+        }
+      </style>
+      <h2 class="test-title">Button</h2>
+      <div class="test-section-sub">
+        <h3 class="test-title">default</h3>
+        <button type="button" class="ui-button ui-button__bg--default">button</button>
+        <button type="button" class="ui-button ui-button__bg--deepgray">button</button>
+        <button type="button" class="ui-button ui-button__border--gray">button</button>
+
+        
+
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-title">icon</h3>
+        <button type="button" class="ui-button ui-button__icon--right ui-button__icon--download">button</button>        
+        <a href="https://consult.mncapro.co.kr/solution/sunmoon/index.php" target="_blank" class="ui-button ui-button__width--230 ui-button__icon ui-button__icon--mygrade">내 성적 산출하기</a>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-title">etc</h3>
+        <button class="ui-button ui-button__width--full ui-button__mygrade">내 성적 산출하기</button>
+        <a href="http://cms.sunmoon.ac.kr/em/5b88e55f0c0e6" target="_blank" class="ui-button ui-button__width--half ui-button__icon ui-button__icon--video">동영상 보러가기</a>
+        
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-title">center</h3>
+        <div class="ui-buttons ui-buttons__center">
+          <button type="button" class="ui-button ui-button__bg--default">수정</button>
+          <button type="button" class="ui-button ui-button__bg--deepgray">삭제</button>
+          <button type="button" class="ui-button ui-button__border--gray">목록</button>
+        </div>
+        <h3 class="test-title">right</h3>
+        <div class="ui-buttons ui-buttons__right">
+          <button type="button" class="ui-button ui-button__bg--default">수정</button>
+          <button type="button" class="ui-button ui-button__bg--deepgray">삭제</button>
+          <button type="button" class="ui-button ui-button__border--gray">목록</button>
+        </div>
+      </div>
+
+      
+
+
+
+      <!-- <div class="test-section-sub">
+        <h3 class="test-title">icon</h3>
+        <button type="button"
+          class="ui-button ui-button__border--blue ui-button__icon--right ui-button__icon--plus ui-button__icon--plus-blue">Create</button>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-title">etc</h3>
+        <button type="button" class="ui-button ui-button__circle ui-button__arrow--top"></button>
+        <button type="button" class="ui-button ui-button__circle ui-button__arrow--bottom"></button>
+        <button type="button" class="ui-button ui-button__circle ui-button__close"></button>
+        <button type="button" class="button-caution"></button>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-title">text</h3>
+        
+        <button type="button" class="ui-button ui-button__bg--skyblue">수정</button>
+        <button type="button" class="ui-button ui-button__border--blue">저장</button>
+        <button type="button" class="ui-button ui-button__border--gray">목록</button>
+        <button type="button" class="ui-button ui-button__border--blue">엑셀</button>
+        <button type="button" class="ui-button ui-button__bg--skyblue">등록</button>
+
+
+        
+      </div> -->
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    <div class="test-section test-section--input">
+      <style>
+        .test-section--input .ui-input-block+.ui-input-block {
+          margin-top: 10px;
+        }
+      </style>
+      <h2 class="test-title">Input</h2>
+      <div class="test-section-sub">
+        <h3 class="test-title">Default</h3>
+        <div class="ui-input-block">
+          <input type="text" class="ui-input" title="title" placeholder="placeholder" />
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="test-section test-section--select">
+      <style>
+        .test-section--select .ui-select-block+.ui-select-block {
+          margin-top: 10px;
+        }
+      </style>
+      <h2 class="test-title">Select</h2>
+      <div class="test-section-sub">
+        <h3 class="test-title">Default</h3>
+        <div class="ui-select-block">
+          <select class="ui-select" title="title">
+            <option value="-1" disabled selected>placeholder</option>
+            <option value="">option 1</option>
+            <option value="">option 2</option>
+            <option value="">option 3</option>
+            <option value="">option 4</option>
+            <option value="">option 5</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="test-section test-section--textarea">
+
+      <h2 class="test-title">textarea</h2>
+      <div class="test-section-sub">
+        <h3 class="test-title">Default</h3>
+        <textarea class="ui-textarea"></textarea>
+      </div>
+    </div>
+
+
+
+    <div class="test-section test-section--table">
+      <h2 class="test-title">Table</h2>
+
+
+
+      <div class="test-section-sub">
+        <h3 class="test-title">default</h3>
+
+        <div class="ui-table-wrap">
+          <div class="ui-table__inner">
+            <table class="ui-table ui-table__hor ui-table__th--center ui-table__td--center">
+              <colgroup>
+                <col style="width: 28%;">
+                <col style="width: 23.4%;">
+                <col style="width: auto;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th>구분</th>
+                  <th>발행시기</th>
+                  <th>홈페이지 탑재 위치</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>입학전형계획</td>
+                  <td>3월 초</td>
+                  <td>입시도우미 탭 - 입학전형계획 - 입학전형계획 다운로드</td>
+                </tr>
+                <tr>
+                  <td>수시 모집요강</td>
+                  <td>5월 말</td>
+                  <td>수시 탭 - 모집요강 - 모집요강 다운로드</td>
+                </tr>
+                <tr>
+                  <td>정시 모집요강</td>
+                  <td>11월 중순</td>
+                  <td>정시 탭 - 모집요강 - 모집요강 다운로드</td>
+                </tr>
+                <tr>
+                  <td>편입학 모집요강</td>
+                  <td>11월 말</td>
+                  <td>편입학 탭 - 모집요강 - 모집요강 다운로드</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-title">ver</h3>
+       
+        <div class="ui-table-wrap">
+          <div class="ui-table__inner">
+            <table class="ui-table ui-table__ver">
+              <colgroup>
+                <col class="ver-th">
+                <col style="width: auto;">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th>상담유형<span class="ui-require"><span class="for-a11y">(필수)</span></span></th>
+                  <td>
+                    <div class="ui-radio__list">
+                      <div class="ui-radio__inner">
+                        <div class="ui-radio-block">
+                          <input type="radio" class="ui-radio" name="qnqType" id="qnqType01">
+                          <label class="ui-label" for="qnqType01">
+                            <span class="ui-radio-object"></span>
+                            <span class="ui-label__text">방문</span>
+                          </label>
+                        </div>
+                        
+                        
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>전형유형<span class="ui-require"><span class="for-a11y">(필수)</span></span></th>
+                  <td>
+                    <div class="ui-select-block">
+                      <select class="ui-select ui-select__width--143" title="title">
+                        <option value="">수시</option>
+                        <option value="">정시</option>
+                        <option value="">편입학</option>
+                        <option value="">재외국인</option>
+                      </select>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>신청자유형</th>
+                  <td>
+                    <div class="ui-select-block">
+                      <select class="ui-select ui-select__width--143" title="title">
+                        <option value="">고1</option>
+                        <option value="">고2</option>
+                        <option value="">고3</option>
+                        <option value="">N수생</option>
+                        <option value="">학부모</option>
+                        <option value="">교사</option>
+                        <option value="">검정고시</option>
+                        <option value="">기타</option>
+                      </select>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>신청자명<span class="ui-require"><span class="for-a11y">(필수)</span></span></th>
+                  <td><input type="text" class="ui-input ui-input__width--479"></td>
+                </tr>
+                <tr>
+                  <th>휴대폰 번호<span class="ui-require"><span class="for-a11y">(필수)</span></span></th>
+                  <td>
+                    <div class="form-flex form-flex__column">
+                      <div class="form-flex__cell">
+                        <div class="form-phone form-phone__width--143">
+                          <select class="ui-select" title="title">
+                            <option value="">010</option>
+                            <option value="">option 1</option>
+                            <option value="">option 2</option>
+                            <option value="">option 3</option>
+                            <option value="">option 4</option>
+                            <option value="">option 5</option>
+                          </select>
+                          <span class="ui-hyphen">-</span>  
+                          <input type="text" class="ui-input">
+                          <span class="ui-hyphen">-</span>  
+                          <input type="text" class="ui-input">
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>출신학교</th>
+                  <td>
+                    <div class="form-des">
+                      <input type="text" class="ui-input ui-input__width--479">
+                      <div class="ui-des">* 졸업예정 또는 졸업한 고등학교</div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>비밀번호*<span class="ui-require"><span class="for-a11y">(필수)</span></span></th>
+                  <td>
+                    <div class="form-des">
+                      <input type="text" class="ui-input ui-input__width--290">
+                      <div class="ui-des">* 비밀번호는 문자 및 숫자 4~6자리입니다. <br>
+                        * 신청내역 조회 시 비밀번호 입력이 필요합니다.
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>자동입력방지</th>
+                  <td>
+                    <div class="form-captcha">
+                      <div class="form-captcha__left">
+                        <button type="button" class="captcha-img">
+                          <img src="../../assets/images/_dummy/img-captcha__num.jpg" alt="">
+                        </button>
+                        <input type="text" class="ui-input ui-input__width--160">
+                      </div>
+                      <div class="ui-des">* 자동입력방지 글자를 입력해주세요.</div>  
+                      
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-title">paging + button</h3>
+        <div class="contents-tab__body">
+          <div class="board-bottom ">
+            <div class="board-bottom__inner board-bottom__with--button">
+              <div class="ui-pagination">
+                <div class="ui-pagination__inner">
+                  <a href="javascript:void(0)" class="paging paging-prev"></a>
+                  <a href="javascript:void(0)" class="paging is-active">1</a>
+                  <a href="javascript:void(0)" class="paging">2</a>
+                  <a href="javascript:void(0)" class="paging">3</a>
+                  <a href="javascript:void(0)" class="paging">4</a>
+                  <a href="javascript:void(0)" class="paging">5</a>
+                  <a href="javascript:void(0)" class="paging paging-next"></a>
+                </div>
+              </div>
+              <div class="ui-buttons">
+                <button type="button" class="ui-button ui-button__bg--default">적용</button>
+              </div>
+            </div>
+
+            
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-title">board-list</h3>
+        <div class="board-list">
+          <div class="board-list__inner">
+            <table class="ui-table ui-table__list">
+              <caption>입학도우미 입학상담 전체 테이블</caption>
+              <colgroup>
+                <col class="col-num">
+                <col class="col-type">
+                <col class="col-title">
+                <col class="col-author">
+                <col class="col-date">
+                <col class="col-count">
+                <col class="col-answer">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col" class="th-num">번호</th>
+                  <th scope="col" class="th-type">구분</th>
+                  <th scope="col" class="th-title">제목</th>
+                  <th scope="col" class="th-author">작성자</th>
+                  <th scope="col" class="th-date">등록일</th>
+                  <th scope="col" class="th-count">조회수</th>
+                  <th scope="col" class="th-answer">답변</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="td-num">
+                    111
+                  </td>
+                  <td class="td-type">기타</td>
+                  <td class="td-tit">
+                    <div class="td-tit__inner">
+                      <!-- 전달사항 :: 비밀글일때 class에 td-tit__link--lock 붙습니다. -->
+                      <!-- 클릭시 비밀번호 입력 팝업창 표출 -->
+                      <a href="javascript:void(0)" class="td-tit__link td-tit__link--lock" data-toggle="modal" data-target="#modalLock">2024 학과모집</a>
+                    </div>
+                  </td>
+                  <td class="td-author">김청수</td>
+                  <td class="td-date">2023.02.20</td>
+                  <td class="td-count">123</td>
+                  <td class="td-answer"><span class="ui-badge ui-badge__answer ui-badge__answer--wait">대기</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="td-num">
+                    110
+                  </td>
+                  <td class="td-type">정시</td>
+                  <td class="td-tit">
+                    <div class="td-tit__inner">
+                      <!-- 전달사항 :: 비밀글일때 class에 td-tit__link--lock 붙습니다. -->
+                      <a href="javascript:void(0)" class="td-tit__link td-tit__link--lock">충원 합격자 수강신청 및 일정
+                        문의</a>
+                    </div>
+                  </td>
+                  <td class="td-author">김길동</td>
+                  <td class="td-date">2023.02.20</td>
+                  <td class="td-count">123</td>
+                  <td class="td-answer"><span class="ui-badge ui-badge__answer ui-badge__answer--wait">대기</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="td-num">
+                    109
+                  </td>
+                  <td class="td-type">수시</td>
+                  <td class="td-tit">
+                    <div class="td-tit__inner">
+                      <!-- 전달사항 :: 비밀글일때 class에 td-tit__link--lock 붙습니다. -->
+                      <a href="javascript:void(0)" class="td-tit__link td-tit__link--lock">진로 선택 과목에 대해
+                        문의합니다.</a>
+                    </div>
+                  </td>
+                  <td class="td-author">유재석</td>
+                  <td class="td-date">2023.02.20</td>
+                  <td class="td-count">435</td>
+                  <td class="td-answer"><span class="ui-badge ui-badge__answer ui-badge__answer--end">완료</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+
+
+
+
+    </div>
+
+    <div class="test-section test-section--checkbox">
+      <h2 class="test-title">checkbox</h2>
+      <div class="test-section-sub">
+        <h3 class="test-title">Default</h3>
+
+        <div class="ui-checkbox__list">
+          <div class="ui-checkbox__inner">
+            <div class="ui-checkbox-block">
+              <input type="checkbox" class="ui-checkbox">
+              <label for="" class="ui-label">
+                <span class="ui-checkbox-object"></span>
+                <span class="ui-label__text">웹캠사용</span>
+              </label>
+            </div>
+            <div class="ui-checkbox-block">
+              <input type="checkbox" class="ui-checkbox" checked="">
+              <label for="" class="ui-label">
+                <span class="ui-checkbox-object"></span>
+                <span class="ui-label__text">새창으로</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-title">text left</h3>
+
+        <div class="ui-checkbox__list">
+          <div class="ui-checkbox__inner">
+            <div class="ui-checkbox-block">
+              <input type="checkbox" id="left1" class="ui-checkbox">
+              <label for="left1" class="ui-label ui-label__reverse">
+                <span class="ui-label__text">웹캠사용</span>
+                <span class="ui-checkbox-object"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- <div class="test-section test-section--radio">
+      <h2 class="test-title">radio</h2>
+      <div class="test-section-sub">
+        <h3 class="test-title">Default</h3>
+
+        <div class="ui-radio__list">
+          <div class="ui-radio__inner">
+            <div class="ui-radio-block">
+              <input type="radio" class="ui-radio" checked>
+              <label class="ui-label">
+                <span class="ui-radio-object"></span>
+                <span class="ui-label__text">New</span>
+              </label>
+            </div>
+            <div class="ui-radio-block">
+              <input type="radio" class="ui-radio">
+              <label class="ui-label">
+                <span class="ui-radio-object"></span>
+                <span class="ui-label__text">AD</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div> -->
+
+    <div class="test-section test-section--tab-menu">
+      <h2 class="test-title">tab-menu</h2>
+      <div class="test-section-sub">
+        <h3 class="test-title">Default</h3>
+
+        <div class="tab-menu">
+          <ul class="ui-list tab-menu__lists">
+            <li class="tab-menu__list is-active">
+              <a href="javascript: void(0);" class="tab-menu__link is-active">탭 메뉴1</a>
+            </li>
+            <li class="tab-menu__list">
+              <a href="javascript: void(0);" class="tab-menu__link">탭 메뉴1</a>
+            </li>
+            <li class="tab-menu__list">
+              <a href="javascript: void(0);" class="tab-menu__link">탭 메뉴1</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+
+    
+
+
+    <div class="test-section test-section--title">
+      <h2 class="test-title">sub title</h2>
+      <div class="test-section-sub">
+        <h3 class="test-title"></h3>
+
+        <div class="sub-core__subtitle">sub-core__subtitle</div>
+        <div class="sub-core__item--title">sub-core__item--title</div>
+
+      </div>
+    </div>
+
+    <div class="test-section test-section--mark">
+      <h2 class="test-title">mark</h2>
+      <div class="test-section-sub">
+        <h3 class="test-title"></h3>
+        <span class="ui-require"><span class="for-a11y">(필수)</span></span>
+      </div>
+    </div>
+
+    <div class="test-section test-section--box">
+      <h2 class="test-title">text box</h2>
+      <div class="test-section-sub">
+        <h3 class="test-title"></h3>
+        <div class="core-item__box core-item__box-green">
+          <p class="core-item__box--title">대학의 건학이념 및 인재상에 부합하는 학생을 선발하기 위한 제도</p>
+          기본적인 학업 수행 능력을 갖춘 학생을 대상으로 학생의 교육환경, 학생을 대상으로 학생의 교육환경, 학습과정, 소질·적성, 인성, 창의성 및 성장잠재력 등 다양한 요소를 고려하여
+          학생을 선발하는 제도.
+        </div>
+      </div>
+    </div>
+
+
+    
+
+    <!-- <div class="test-section test-section--modal">
+      <style>
+        .test-section--modal a{
+            margin: 10px 0 0 10px;
+            padding: 5px 15px;
+            font-size: 14px;
+            line-height: 20px;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            background: #666;}
+      </style>
+      <h2 class="test-title">modal</h2>
+      <div class="test-section-sub">
+        <h3 class="test-title">default</h3>
+        <a href="./dist/_guide-popup__normal.html" target="_blank">popup</a>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-title">scrollable</h3>
+        <a href="./dist/_guide-popup__scroll.html" target="_blank">popup</a>
+      </div>
+    </div> -->
+
+
+
+
+  </div>
+
+
+
+
+
+</body>
+
+</html>
