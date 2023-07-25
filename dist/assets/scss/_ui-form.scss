@@ -420,12 +420,11 @@
 		&-object {
 			position: relative;
 			display: block;
-			width: 2.4rem;
-			height: 2.4rem;
-			border: solid 1px #e3e3e3;
+			width: 2rem;
+			height: 2rem;
 			box-sizing: border-box;
 			border-radius: .3rem;
-			background: no-repeat 50% 50% #fff;
+			background: #eef0f1 url(../images/icon/icon-check-g.png) no-repeat center;
 			-webkit-box-flex: 0;
 			-ms-flex: none;
 			flex: none;
@@ -531,10 +530,10 @@
 		&:checked+.ui-label .ui-checkbox-object {
 			//border-color: #4886ff;
 			//background-color: #4886ff;
-			background-image: url('../images/icon/icon-check.png');
+			background: #00a7e1 url('../images/icon/icon-check-w.png');
 			background-repeat: no-repeat;
 			background-position: center;
-			background-size: 1.4rem 1.1rem;
+			background-size: 1.0rem 0.8rem;
 		}
 	}
 

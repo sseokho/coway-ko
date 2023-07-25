@@ -132,6 +132,162 @@
   text-align: center;
 }
 
+/* main */
+.container {
+  height: 100%;
+  border: 2px solid cyan;
+}
+.container__inner {
+  position: relative;
+}
+.container__inner .main-visual {
+  position: relative;
+  width: 100%;
+  height: 43.8rem;
+  background: url(../images/main/mainBg.jpg) no-repeat center 100%;
+}
+.container__inner .main-visual__inner {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -35%);
+          transform: translate(-50%, -35%);
+}
+.container__inner .main-visual__inner .tit {
+  display: inline;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 5.4rem;
+  font-weight: 600;
+}
+.container__inner .main-visual__inner .txt {
+  display: block;
+  margin-top: 3rem;
+  text-align: center;
+  color: #fff;
+  font-size: 2.6rem;
+  font-weight: 200;
+}
+.container__inner .main-visual__inner .txt strong {
+  font-weight: 600;
+}
+.container__inner .main-content {
+  position: absolute;
+  width: 100%;
+  top: 41rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid red;
+}
+.container__inner .main-content__inner {
+  margin: 0 auto;
+  max-width: 140rem;
+  background-color: #fff;
+  border: 1px solid green;
+}
+.container__inner .main-content__inner .main-cont {
+  padding: 7rem 6rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.container__inner .main-content__inner .main-cont .title {
+  overflow: hidden;
+  display: block;
+  height: 100%;
+}
+.container__inner .main-content__inner .main-cont .title h3 {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  font-size: 5rem;
+  height: 5rem;
+  font-weight: 600;
+  line-height: 5rem;
+  font-size: 5rem;
+  font-weight: 600;
+}
+.container__inner .main-tab .tab {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.container__inner .main-tab .tab ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.container__inner .main-tab .tab ul li {
+  display: inline-block;
+  margin-left: -4px;
+  width: 20%;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  cursor: pointer;
+  background: #f4f5f9;
+}
+.container__inner .main-tab .tab ul li:first-child {
+  margin-left: 0;
+}
+.container__inner .main-tab .tab ul li:last-child {
+  float: right;
+}
+.container__inner .main-tab .tab ul li a {
+  color: #000;
+  font-size: 18px;
+  font-weight: bold;
+}
+.container__inner .main-tab .tab ul li.plus {
+  padding-right: 40px;
+  text-align: right;
+  background-color: #fff;
+}
+.container__inner .main-tab .tab ul li.on {
+  background: #fff;
+  border-top: 1px solid #02b097;
+  border-left: 1px solid #02b097;
+  border-right: 1px solid #02b097;
+  border-bottom: 1px solid #fff;
+}
+.container__inner .main-tab .tab .conBox {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  min-height: 200px;
+  background: #fff;
+  display: none;
+  text-align: center;
+  border: 1px solid #02b097;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-top: 1px solid #02b097;
+}
+.container__inner .main-tab .tab .conBox .line {
+  width: 100%;
+  padding: 20px 40px;
+  text-align: left;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.container__inner .main-tab .tab .conBox a {
+  width: 100%;
+  display: inline-block;
+  font-size: 18px;
+}
+.container__inner .main-tab .tab .conBox em {
+  float: right;
+  font-size: 14px;
+}
+.container__inner .main-tab .tab .conBox.on {
+  display: block;
+  padding: 20px 0;
+  margin-top: -1px;
+}
+
 /*====================================================================================*/
 /*================================= responsive =======================================*/
 /*====================================================================================*/
